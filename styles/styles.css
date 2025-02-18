@@ -1,0 +1,240 @@
+.card {
+    width: 17em;
+    height: 22.5em;
+    background: #171717;
+    transition: 1s ease-in-out;
+    clip-path: polygon(
+      30px 0%,
+      100% 0,
+      100% calc(100% - 30px),
+      calc(100% - 30px) 100%,
+      0 100%,
+      0% 30px
+    );
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card span {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: block;
+    font-size: 1em;
+  }
+  
+  .card .info {
+    font-weight: 400;
+    color: white;
+    display: block;
+    text-align: center;
+    font-size: 0.72em;
+    margin: 1em;
+  }
+  
+  .card .img {
+    width: 4.8em;
+    height: 4.8em;
+    background: white;
+    border-radius: 15px;
+    margin: auto;
+  }
+  
+  .card .share {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  }
+  
+  .card a {
+    color: white;
+    transition: 0.4s ease-in-out;
+  }
+  
+  .card a:hover {
+    color: red;
+  }
+  
+  .card button {
+    padding: 0.8em 1.7em;
+    display: block;
+    margin: auto;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    transition: 0.4s ease-in-out;
+  }
+  
+  .card button:hover {
+    background: red;
+    color: white;
+    cursor: pointer;
+  }
+
+
+
+.tab{
+
+  color: white;  
+
+}
+.tab::after{
+
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  background: cyan;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.tab:hover::after{
+
+  width: 100%;
+  left: 0;
+
+}
+
+.lang
+{
+
+  display: flex;
+  height: 60px;
+  flex-direction: column;
+  font-family: sans-serif;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 2px;
+
+
+  img{
+
+    width: 48px;
+
+  }
+
+  p{
+
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    color: black;
+
+  }
+
+  
+
+}
+
+.lang:hover
+{
+ 
+  scale: 1.1;
+  transition: 0.2s ease-in-out;
+
+}
+
+
+
+.db
+{
+
+  display: flex;
+  width: 60%;
+  height: 18%;
+  flex-direction: column;
+  font-family: sans-serif;
+  color: black;
+  
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  text-align: center;
+  font-size: 0.8em;
+  padding: 2px;
+  border: 2px dashed #cfcfcf;
+
+}
+
+
+.tooltip-container {
+  position: absolute; /* Permite que el tooltip flote */
+  display: none; /* Inicialmente oculto */
+  background-color: wheat;
+  color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000; /* Asegura que está por encima de los botones */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-content {
+  max-height: 150px;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+
+.tooltip-container.active .tooltip-content {
+  display: block;
+}
+
+.framework {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.framework img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .button-content,
+  .share-icon,
+  .social-icon,
+  .tooltip-content {
+      transition: none;
+  }
+
+  .button-content {
+      animation: none;
+  }
+}
+
+/* Custom Scrollbar for Tooltip Content */
+.tooltip-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tooltip-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.tooltip-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.tooltip-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.tl-slide-message-container{
+
+  display: none !important;
+}

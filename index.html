@@ -1,446 +1,279 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="es-Es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aldana Dev</title>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"> -->
-    <link rel="stylesheet" href="./styles/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/index.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+    <link defer="" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
 </head>
 
 <body>
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full min-h-screen auto-rows-auto gap-4 font-serif">
 
-    <div class="interactive-cv">
-        <div class="relative">
-            <div class="p-custom relative grid grid-cols-3 space-x-4 pb-0">
-                <img 
-                    class="w-15 object-cover border-primary rounded-full z-10 mx-auto sm:w-40 sm:rounded-full"
-                    src="https://storage.rxresu.me/cm6dymlhd03t0o9rw3s2j0ahj/pictures/sfyi6hctpypaqb0bqfsmsdn9.jpg"
-                    alt="Profile"
-                    style="aspect-ratio: 1/1; border-width: 4px;">
-                <div class="relative z-10 col-span-2 text-background">
-                    <div class="p-custom text-left">
-                        <h2 class="text-2xl font-bold sm:text-3xl font-bold">Edgar Aldana</h2>
-                        <p class="text-sm sm:text-xl">Software Developer | Data Analyst</p>
-                    </div>
-                    <div class="col-span-2 col-start-2 mt-10 text-foreground">
-                        <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-white sm:text-sm sm:text-black">
-                            <div class="flex items-center gap-x-1.5"><i class="ph ph-bold ph-map-pin text-primary"></i>
-                                <div>Ciudad de México</div>
-                            </div>
-                            <div class="bg-text size-1 rounded-full last:hidden"></div>
-                            <div class="flex items-center gap-x-1.5"><i class="ph ph-bold ph-phone text-primary"></i><a
-                                    href="tel:55 4858 3697" target="_blank" rel="noreferrer">55 4858 3697</a></div>
-                            <div class="bg-text size-1 rounded-full last:hidden"></div>
-                            <div class="flex items-center gap-x-1.5"><i class="ph ph-bold ph-at text-primary"></i><a
-                                    href="mailto:eddaldana95@gmail.com" target="_blank"
-                                    rel="noreferrer">eddaldana95@gmail.com</a></div>
-                            <div class="bg-text size-1 rounded-full last:hidden"></div>
-                            <div class="flex items-center gap-x-1.5"><i
-                                    class="ph ph-bold ph-clock text-primary"></i><span>+5 años</span></div>
-                            <div class="bg-text size-1 rounded-full last:hidden"></div>
+        <section id="topbar"
+            class="col-span-full h-[320px] row-span-1 bg-blue-500 sm:col-span-full place-content-center sm:h-[360px]">
+
+            <nav class="w-full h-full">
+
+                <label class="md:hidden">
+                    <div class="w-9 h-10 cursor-pointer flex flex-col items-center justify-center">
+                        <input class="hidden peer" type="checkbox" />
+                        <div
+                            class="w-[50%] h-[2px] bg-white rounded-sm transition-all duration-300 origin-left translate-y-[0.45rem] peer-checked:rotate-[-45deg]">
+                        </div>
+                        <div
+                            class="w-[50%] h-[2px] bg-white rounded-md transition-all duration-300 origin-center peer-checked:hidden">
+                        </div>
+                        <div
+                            class="w-[50%] h-[2px] bg-white rounded-md transition-all duration-300 origin-left -translate-y-[0.45rem] peer-checked:rotate-[45deg]">
                         </div>
                     </div>
+                </label>
+
+                <div
+                    class="flex items-center text-center w-full h-[80%] pl-5 sm:w-[60%] sm:h-[78%] sm:items-center sm:text-left sm:pl-10">
+                    <h1 class="text-white text-bold text-4xl font-serif sm:text-[60px]">Hola, <br>¡Un placer saludarte!
+                    </h1>
                 </div>
+
+
+                <ul
+                    class="hidden text-white gap-4 rounded-lg sm:justify-center p-2 md:flex md:justify-self-center lg:justify-self-end sm:justify-self-end sm:backdrop-blur-[30px]">
+                    <li class="border-1 border-dashed border-[#cfcfcf] p-2 rounded-lg">
+                        <a href="#summary" class="tab">ACERCA DE MÍ
+                        </a>
+                    </li>
+                    <li class="border-1 border-dashed border-[#cfcfcf] p-2 rounded-lg"><a href="#skills"
+                            class="tab">CONOCIMIENTOS</a></li>
+                    <li class="border-1 border-dashed border-[#cfcfcf] p-2 rounded-lg"><a href="#carrier"
+                            class="tab">TRAYECTORIA</a></li>
+                    <li class="border-1 border-dashed border-[#cfcfcf] p-2 rounded-lg"><a href="#contact"
+                            class="tab">CONTACTO</a></li>
+                </ul>
+
+            </nav>
+
+        </section>
+
+        <section id="summary" class="col-span-full sm:col-span-1 md:col-span-2 row-span-1 sm:row-span-2 font-sans md:items-center">
+
+
+            <div class="w-full max-w-md bg-white rounded-xl shadow-md overflow-hidden mx-auto">
+                <div class="flex justify-between items-center px-6 py-4">
+                    <div class="flex space-x-4">
+                        <div>
+                            <img class="rounded-full w-12 h-12 sm:w-24 sm:h-24" src="./media/images/profile.jpg"
+                                alt="profile">
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold">Edgar Aldana</div>
+                            <div class="text-sm text-gray-500">@ealdana</div>
+                        </div>
+
+                    </div>
+
+                    <div class="flex space-x-1">
+                        <a href="https://github.com/Edgar-Aldana" target="_blank" class="text-sm text-gray-500">
+                            <img src="./media/images/github-mark.svg" alt="github" class="w-6 sm:w-6">
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/edgar-aldana/" target="_blank"
+                            class="text-sm text-gray-500">
+                            <img src="./media/images/linkedin.svg" alt="linkedin" class="w-7 sm:w-7">
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="px-6 py-4">
+
+                    <div class="text-sm text-gray-800">
+
+                        Pasante de Ingeniería en electrónica, con especialidad en desarrollo de sistemas
+                        computacionales. <br><br>
+                        Cuento con una trayectoria de +6 años creando soluciones tecnológicas y +4 años en soporte
+                        especializado
+                        a sectores:
+
+                        <strong>industrial, comercial, fintech, banca tradicional y administrativo.</strong>
+                        <br><br>
+
+                        Comprometido en cada proyecto en el que participo y en constante evolución acorde a las
+                        soluciones tecnológicas.
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="flex justify-between items-center space-x-4 pt-4 border-t border-gray-200 p-4">
+                    <div class="flex items-center space-x-4">
+                        <svg class="h-4 w-4 text-gray-500" fill="none" height="24" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                            <path d="M21 3v5h-5"></path>
+                            <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                            <path d="M8 16H3v5"></path>
+                        </svg>
+                        <svg class="h-4 w-4 text-gray-500" fill="none" height="24" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                            </path>
+                        </svg>
+                        <svg class="h-4 w-4 text-gray-500" fill="none" height="24" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" x2="12" y1="3" y2="15"></line>
+                        </svg>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <svg class="h-4 w-4 text-gray-500" fill="none" height="24" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            width="24" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <circle cx="19" cy="12" r="1"></circle>
+                            <circle cx="5" cy="12" r="1"></circle>
+                        </svg>
+                        <svg class="h-4 w-4 text-gray-500" fill="none" height="24" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path>
+                        </svg>
+                    </div>
+                </div>
+
             </div>
-            <div class="absolute top-0 right-0 h-[180px] w-[80%] bg-primary  sm:h-[85px] sm:w-full"></div>
-        </div>
-        <div class="grid grid-cols-1 w-5/6 mx-auto">
-
-            <div class="main p-custom group space-y-4 col-span-2">
-                <section id="summary">
-
-                    <div class="wysiwyg my-8 text-xs sm:text-sm" style="columns: 1;">
-                        <p style="text-align:justify"><em>Desarrollador de software con más de 5 años de experiencia
-                                profesional, especialista en </em><strong><em>RPA</em></strong><em>,
-                            </em><strong><em>Business intelligence y Desarrollo web</em></strong><em>, con un historial
-                                comprobado en la creación de herramientas eficientes para </em><strong><em>web
-                                    scraping</em></strong><em>, </em><strong><em>adquisición de datos en tiempo
-                                    real</em></strong><em> desde sistemas embebidos, y la integración de
-                            </em><strong><em>web services SOAP/REST</em></strong><em>. </em></p>
-                    </div>
-                </section>
 
 
 
-                <div class="mx-[-10%] w-[120%] sm:w-full sm:mx-auto">
 
-                    <div
-                        class="accordion-toggle flex justify-between items-center bg-gray-200 p-3 rounded-lg cursor-pointer">
-                        <span class="font-semibold text-sm sm:text-xl">Educación</span>
-                        <svg class="icon w-5 h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </div>
+        </section>
 
-                    <div class="accordion-content transition-height bg-gray-100 rounded-lg">
+        <section id="skills"
+            class="col-span-full sm:col-span-1 md:col-span-2 lg:col-span-3 row-span-1 sm:row-span-1 p-4 md:h-[800px] lg:h-[500px]">
 
-                        <section id="education" class="grid">
 
-                            <div class="grid gap-x-6 gap-y-3" style="grid-template-columns: repeat(1, 1fr);">
-                                <div class="relative space-y-2 pl-4 group-[.sidebar]:pl-0">
-                                    <div class="relative -ml-4 group-[.sidebar]:ml-0">
-                                        <div class="pl-4 group-[.sidebar]:pl-0">
-                                            <div
-                                                class="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-                                                
+            <div class="flex flex-wrap gap-10 justify-around items-start sm:h-full sm:gap-24">
 
-                                                <div class="job flex-col sm:flex-row">
+                <div class="p-4 w-[350px] rounded-lg shadow-md font-sans">
 
-                                                    <div class="reference-img-education">
-                                                        <img src="./media/images/education/esime.jpeg" class="w-[80%] h-[80%] sm:w-full" alt="INSTITUCIÓN">
-                                                    </div>
-                                                    <div class="text-center text-[12px] sm:text-left sm:text-lg">
-                                                        <div class="font-bold">IPN | ESIME Zacatenco</div>
-                                                        <div class="hidden sm:block">Físico - Matemático</div>
-                                                        <div></div>
-                                                    </div>
-
-                                                </div>
-                                                
-                                                
-                                                
-                                                <div class="text-right sm:shrink-0 sm:text-right">
-                                                    <div class="text-[12px] font-bold sm:font-bold sm:block sm:text-lg">2019 - 2025</div>
-                                                    <div class="text-[12px] sm:text-lg">Ingenieria en electrónica</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="absolute inset-y-0 -left-px border-l-4 border-primary group-[.sidebar]:hidden">
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="absolute inset-y-0 left-0 border-l border-primary group-[.sidebar]:hidden">
-                                    </div>
-                                </div>
+                    <h1 class="text-2xl font-bold text-center text-blue-500">Areas de experiencia</h1>
+                    <div class="grid gap-4 mt-2 p-4">
+                        <div class="flex gap-2 items-center">
+                            <img src="./media/images/software.png" alt="development" class="w-15 h-12 rounded">
+                            <div class="grid gap-1 text-sm flex-1">
+                                <h2 class="font-semibold leading-none line-clamp-2">
+                                    Desarrollo de software
+                                </h2>
                             </div>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <img src="./media/images/analysis.png" alt="development" class="w-15 h-15 rounded">
+                            <div class="grid gap-1 text-sm flex-1">
+                                <h2 class="font-semibold leading-none line-clamp-2">
+                                    Analisis de datos
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <img src="./media/images/automation.png" alt="automation" class="w-13 h-13 rounded">
+                            <div class="grid gap-1 text-sm flex-1">
+                                <h2 class="font-semibold leading-none line-clamp-2">
+                                    Automatización de procesos - RPA
+                                </h2>
+                            </div>
+                        </div>
 
-                        </section>
+                        <div class="flex gap-2 items-center">
+                            <img src="./media/images/IoT.png" alt="automation" class="w-13 h-13 rounded">
+                            <div class="grid gap-1 text-sm flex-1">
+                                <h2 class="font-semibold leading-none line-clamp-2">
+                                    Automatización industrial y comercial - IoT
+                                </h2>
+                            </div>
+                        </div>
 
                     </div>
+
                 </div>
 
-                <div class="mx-[-10%] w-[120%] sm:w-full sm:mx-auto">
 
-                    <div
-                        class="accordion-toggle flex justify-between items-center bg-gray-200 p-3 rounded-lg cursor-pointer">
-                        <span class="font-semibold text-sm sm:text-xl">Experiencia</span>
-                        <svg class="icon w-5 h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
+
+                <div class="flex gap-4 flex-wrap justify-center shadow-md w-[350px] h-[400px] md:h-[500px]">
+
+                    <div class="flex text-2xl font-sans font-bold text-orange-500 w-full justify-center">Lenguajes</div>
+                    <div class="lang shadow-md" data-lang="python">
+                        <img src="./media/images/python.png" alt="python" class="w-12">
+                        <p>python</p>
+                    </div>
+                    <div class="lang shadow-md rounded-md" data-lang="javascript">
+                        <img src="./media/images/javascript.png" alt="javascript" class="w-12">
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="lang shadow-md rounded-md" data-lang="vb">
+                        <img src="./media/images/vb.png" alt="visualbasic" class="">
+                        <p>Visual Basic</p>
+                    </div>
+                    <div class="lang shadow-md rounded-md" data-lang="cpp">
+                        <img src="./media/images/cpp.png" alt="cpp" class="w-12">
+                        <p>C++</p>
+                    </div>
+                    <div class="lang shadow-md rounded-md" data-lang="html">
+                        <img src="./media/images/html.png" alt="html" class="w-12">
+                        <p>HTML</p>
+                    </div>
+                    <div class="lang shadow-md rounded-md" data-lang="css">
+                        <img src="./media/images/css.png" alt="css" class="w-12">
+                        <p>CSS</p>
+                    </div>
+                    <div class="lang shadow-md rounded-md" data-lang="power_m">
+                        <img src="./media/images/power.png" alt="powerm" class="w-12">
+                        <p>Power M</p>
                     </div>
 
-                    <div class="accordion-content transition-height bg-gray-100 rounded-lg">
+                    <div class="flex text-2xl font-sans font-bold text-green-500 w-full justify-center">Bases de datos
+                    </div>
 
-                        <section id="experience" class="grid">
+                    <div class="lang shadow-md rounded-md" data-lang="">
+                        <img src="./media/images/postgres.png" alt="sql" class="w-12">
+                        <p>PostgreSQL</p>
+                    </div>
 
-                            <div class="grid gap-x-6 gap-y-3" style="grid-template-columns: repeat(1, 1fr);">
-                                <div class="relative space-y-2 pl-4 group-[.sidebar]:pl-0">
-                                    <div class="relative -ml-4 group-[.sidebar]:ml-0">
-                                        <div class="pl-4 group-[.sidebar]:pl-0">
-                                            <div
-                                                class="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
+                    <div class="lang shadow-md rounded-md" data-lang="">
+                        <img src="./media/images/sqlserver.png" alt="sql" class="w-12">
+                        <p>SQL Server</p>
+                    </div>
 
-                                                <div class="job">
-                                                    <div class="reference-img-experience">
-                                                        <img src="./media/images/experience/scotiabank.png"
-                                                            alt="INSTITUCIÓN"
-                                                            class="w-[80%] h-[80%] sm:w-full sm:h-full">
-                                                    </div>
+                    <div class="lang shadow-md rounded-md" data-lang="">
+                        <img src="./media/images/elastic.png" alt="sql" class="w-12">
+                        <p>Elasticsearch</p>
+                    </div>
 
-                                                    <div class="text-left">
-                                                        <div class="font-bold text-[12px]  sm:text-lg">IISI Consultora - Scotiabank</div>
-                                                        <div class="text-[12px] sm:text-lg">Python Developer</div>
-                                                    </div>
-                                                </div>
+                    <div class="lang shadow-md rounded-md" data-lang="">
+                        <img src="./media/images/mongodb.png" alt="mongo" class="w-12">
+                        <p>Mongo DB</p>
+                    </div>
 
-
-                                                <div class="shrink-0 text-right">
-                                                    <div class="text-[12px] font-bold sm:font-bold sm:block sm:text-lg">abril 2024 - noviembre 2024</div>
-                                                    <div class="text-[12px] sm:text-lg">Ciudad de México</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="absolute inset-y-0 -left-px border-l-4 border-primary group-[.sidebar]:hidden">
-                                        </div>
-                                    </div>
-
-                                    <button
-                                        class="toggle-list flex items-center gap-2 mt-2 px-3 py-1 bg-blue-500 text-white rounded-lg justify-self-end w-[1/4] text-[12px] sm:w-[1/8] sm:text-[16px]">
-                                        <svg class="plus-icon w-5 h-5 transition-transform"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M12 4v16m8-8H4"></path>
-                                        </svg>
-                                        Detalles
-                                    </button>
-
-                                    <div class="wysiwyg list-content border-2 border-dashed border-[#474056] w-5/6 mx-auto p-[4%] text-[10px] hidden sm:text-[16px]">
-
-                                        <p style="text-align:justify">• Implementación del servicio Jupyter Hub con
-                                            autenticación
-                                            LDAP del banco. </p>
-                                        <p style="text-align:justify">• Desarrollo de Shell Scripts para actividades de
-                                            lectura/escritura en servidor. </p>
-                                        <p style="text-align:justify">• Creación de automatizaciones en Python para la
-                                            extracción y
-                                            carga de información hacia Data Lake del gobierno de datos. </p>
-                                        <p style="text-align:justify">• Autor del proyecto “ECP” (Encrypted Credentials
-                                            Provider)
-                                            que consiste en una API REST realizada con FastAPI-Python que envía
-                                            información
-                                            encriptada para su uso en proyectos ya existentes y en producción </p>
-                                        <p style="text-align:justify">• Optimización de memoria de los servidores en el
-                                            procesamiento de datos, utilizando arquitecturas de software y patrones de
-                                            diseño
-                                            adecuadas para cada solución.</p>
-                                    </div>
-
-                                    <div
-                                        class="absolute inset-y-0 left-0 border-l border-primary group-[.sidebar]:hidden">
-                                    </div>
-
-                                </div>
+                </div>
 
 
-                                <div class="relative space-y-2 pl-4 group-[.sidebar]:pl-0">
-                                    <div class="relative -ml-4 group-[.sidebar]:ml-0">
-
-                                        <div class="pl-4 group-[.sidebar]:pl-0">
-
-                                            <div
-                                                class="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-
-                                                <div class="job">
-                                                    <div class="reference-img-experience">
-                                                        <img src="./media/images/experience/daksha.jpeg"
-                                                            alt="INSTITUCIÓN"
-                                                            class="w-[80%] h-[80%] sm:w-full sm:h-full">
-                                                    </div>
-                                                    <div class="text-left">
-                                                        <div class="font-bold text-[12px] sm:text-lg">Daksha Group</div>
-                                                        <div class="text-[12px] sm:text-lg">Desarrollador Fullstack</div>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="shrink-0 text-right">
-                                                    <div class="font-bold text-[12px] sm:font-bold sm:block sm:text-lg">septiembre 2023 – abril 2024</div>
-                                                    <div class="text-[12px] sm:text-lg">Ciudad de México</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="absolute inset-y-0 -left-px border-l-4 border-primary group-[.sidebar]:hidden">
-                                        </div>
-                                    </div>
-
-                                    <button
-                                        class="toggle-list flex items-center gap-2 mt-2 px-3 py-1 bg-blue-500 text-white rounded-lg justify-self-end w-[1/4] text-[12px] sm:w-[1/8] sm:text-[16px]">
-                                        <svg class="plus-icon w-5 h-5 transition-transform"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M12 4v16m8-8H4"></path>
-                                        </svg>
-                                        Detalles
-                                    </button>
-
-                                    <div class="wysiwyg list-content border-2 border-dashed border-[#474056] w-5/6 mx-auto p-[4%] text-[10px] hidden sm:text-[16px]">
-                                        <p style="text-align:justify">• Propuesta de arquitectura Backend para
-                                            importante
-                                            proyecto
-                                            de gestión de seguros de vida, autos, accidentes y enfermedades.
-                                            implementación de
-                                            API
-                                            REST utilizando FastAPI - Python como marco de desarrollo. </p>
-                                        <p style="text-align:justify">• Desarrollo de algoritmos y lógica de negocio
-                                            requerida
-                                            para
-                                            el proyecto de seguros </p>
-                                        <p style="text-align:justify">• Gestión y diseño de bases de datos de proyectos
-                                            con el
-                                            motor
-                                            SQL Server y postgreSQL </p>
-                                        <p style="text-align:justify">• Diseño y optimización de consultas SQL para el
-                                            correcto
-                                            funcionamiento de la aplicación en tiempo de ejecución. (Querys, Funciones,
-                                            Stored
-                                            Procedures) </p>
-                                        <p style="text-align:justify">• Documentación de proyecto mediante Open API -
-                                            Swagger.
-                                            Incluyendo los esquemas JSON de entrada/salida por cada caso de uso.</p>
-                                    </div>
-
-                                    <div
-                                        class="absolute inset-y-0 left-0 border-l border-primary group-[.sidebar]:hidden">
-                                    </div>
-                                </div>
-
-
-                                <div class="relative space-y-2 pl-4 group-[.sidebar]:pl-0">
-                                    <div class="relative -ml-4 group-[.sidebar]:ml-0">
-                                        <div class="pl-4 group-[.sidebar]:pl-0">
-                                            
-                                            
-                                            <div class="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-                                                
-                                                <div class="job">
-                                                    
-                                                    <div class="reference-img-experience">
-                                                        <img src="./media/images/experience/YA.png"
-                                                            alt="INSTITUCIÓN"
-                                                            class="w-[80%] h-[80%] sm:w-full sm:h-full">
-                                                    </div>
-
-                                                    <div class="text-left">
-                                                        <div class="font-bold text-[12px] sm:text-lg">Ya Ganaste</div>
-                                                        <div class="text-[12px] sm:text-lg">Revenue Assurance Specialist</div>
-                                                    </div>
-                                                
-                                                </div>
-                                                
-                                                
-                                                
-                                                
-                                                <div class="shrink-0 text-right">
-                                                    <div class="font-bold text-[12px] sm:font-bold sm:block sm:text-lg">mayo 2022 - agosto 2024</div>
-                                                    <div class="text-[12px] sm:text-lg">Ciudad de México</div>
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
-                                        <div
-                                            class="absolute inset-y-0 -left-px border-l-4 border-primary group-[.sidebar]:hidden">
-                                        </div>
-                                    </div>
-
-                                    <button
-                                        class="toggle-list flex items-center gap-2 mt-2 px-3 py-1 bg-blue-500 text-white rounded-lg justify-self-end w-[1/4] text-[12px] sm:w-[1/8] sm:text-[16px]">
-                                        <svg class="plus-icon w-5 h-5 transition-transform"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M12 4v16m8-8H4"></path>
-                                        </svg>
-                                        Detalles
-                                    </button>
-
-                                    <div class="wysiwyg list-content border-2 border-dashed border-[#474056] w-5/6 mx-auto p-[4%] text-[10px] hidden sm:text-[16px]">
-                                        <p style="text-align:justify">• Desarrollo de aplicaciones en Python para web
-                                            scraping y
-                                            automatización de procesos, cumpliendo con requerimientos personalizados de
-                                            usuarios.
-                                        </p>
-                                        <p style="text-align:justify">• Soporte / Monitoreo de bots y procesos ETL que
-                                            se tienen
-                                            en
-                                            producción por cada solución propuesta. • Investigación de canales para la
-                                            comunicación
-                                            entre bots y/o API’s de distintas tecnologías. </p>
-                                        <p style="text-align:justify">• Diseño y mantenimiento de Bases de Datos en los
-                                            motores
-                                            SQL
-                                            Server &amp; PostgreSQL. </p>
-                                        <p style="text-align:justify">• Creación de procesos ETL en Spoon Pentaho para
-                                            actualización
-                                            de Bases de Datos.</p>
-                                    </div>
-
-
-                                    <div
-                                        class="absolute inset-y-0 left-0 border-l border-primary group-[.sidebar]:hidden">
-                                    </div>
-                                </div>
-                                <div class="relative space-y-2 pl-4 group-[.sidebar]:pl-0">
-                                    <div class="relative -ml-4 group-[.sidebar]:ml-0">
-                                        <div class="pl-4 group-[.sidebar]:pl-0">
-                                            <div
-                                                class="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-                                               
-
-                                                <div class="job">
-
-                                                    <div class="reference-img-experience">
-                                                        <img src="./media/images/experience/Emerson.png"
-                                                            alt="INSTITUCIÓN"
-                                                            class="w-[80%] h-[80%] sm:w-full sm:h-full">
-                                                    </div>
-                                                    
-                                                    <div class="text-left">
-                                                        <div class="font-bold text-[12px] sm:text-lg">Emerson Climate Technologies</div>
-                                                        <div class="text-[12px] sm:text-lg">Data Analyst</div>
-                                                    </div>
-
-                                                </div>
-
-                                                
-                                                
-                                                
-                                                <div class="shrink-0 text-right">
-                                                    <div class="font-bold text-[12px] sm:font-bold sm:block sm:text-lg">marzo 2020 - Febrero 2022</div>
-                                                    <div class="text-[12px] sm:text-lg">Ciudad de México</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="absolute inset-y-0 -left-px border-l-4 border-primary group-[.sidebar]:hidden">
-                                        </div>
-                                    </div>
-
-                                    <button
-                                        class="toggle-list flex items-center gap-2 mt-2 px-3 py-1 bg-blue-500 text-white rounded-lg justify-self-end w-[1/4] text-[12px] sm:w-[1/8] sm:text-[16px]">
-                                        <svg class="plus-icon w-5 h-5 transition-transform"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M12 4v16m8-8H4"></path>
-                                        </svg>
-                                        Detalles
-                                    </button>
-
-                                    <div class="wysiwyg list-content border-2 border-dashed border-[#474056] w-5/6 mx-auto p-[4%] text-[10px] hidden sm:text-[16px]">
-                                        <p style="text-align:justify">• Desarrollo de aplicaciones de consola en python
-                                            3 para
-                                            el
-                                            intercambio de datos con un sistema embebido en tiempo real, utilizando el
-                                            web
-                                            server
-                                            Danfoss XML Interface (SOAP).</p>
-                                        <p style="text-align:justify">• Automatización de procesos y de software con
-                                            herramientas
-                                            RPA / Python.</p>
-                                        <p style="text-align:justify">• Web scraping realizado con Python a plataforma
-                                            de
-                                            monitoreo
-                                            IoT y página web de</p>
-                                        <p style="text-align:justify">tarifas de negocio CFE para la adquisición de
-                                            datos
-                                            relevantes.</p>
-                                        <p style="text-align:justify">• Diseño de vistas SQL en SnowFlake para
-                                            actualización de
-                                            Dashboards en Power Bi &amp; DOMO.</p>
-                                    </div>
-
-
-                                    <div
-                                        class="absolute inset-y-0 left-0 border-l  border-primary group-[.sidebar]:hidden">
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                <div class="tooltip-container font-sans">
+                    <h2 class="text-orange-500">Frameworks</h2><br>
+                    <div class="tooltip-content" id="frameworks-list">
 
                     </div>
                 </div>
@@ -448,12 +281,140 @@
 
 
             </div>
-        </div>
+
+
+        </section>
+
+
+
+        <section id="carrier" class="col-span-full row-span-1 p-4 h-[700px]">
+
+
+            <div id="timeline-embed" class="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px]"></div>
+
+
+        </section>
+
+
+        <section id="contact" class="col-span-full row-span-1 p-4">
+
+            <footer class="container font-serif rounded-md shadow-xl" id="contact">
+
+                <h2
+                    class="text-center text-[#645CBB] font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+                    Contacto
+                </h2>
+                <h4 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+                    ¿Deseas aclarar alguna duda?
+                </h4>
+                <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
+                    <p class="font-body text-grey-10">
+                        Puede contactarme por cualquiera de mis redes laborales o por los
+                        siguientes medios.
+                    </p>
+                </div>
+
+                <div class="flex flex-col pt-16 lg:flex-row justify-center">
+                    <div
+                        class="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-dashed border-[#cfcfcf] px-6 py-6 sm:py-8 lg:w-1/3">
+                        <div class="flex items-center justify-center">
+                            <i class="bx bx-phone text-2xl text-grey-40"></i>
+                            <p class="pl-2 font-body uppercase text-[#645CBB] lg:text-lg text-center">
+                                Teléfono
+                            </p>
+                        </div>
+                        <p class="pt-2 text-center font-body text-primary lg:text-lg text-center">
+                            (+52) 55 4858 3697
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-dashed border-[#cfcfcf] px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
+                        <div class="flex items-center justify-center">
+                            <i class="bx bx-envelope text-2xl text-grey-40"></i>
+                            <p class="pl-2 font-body uppercase text-[#645CBB] lg:text-lg">
+                                Correo
+                            </p>
+                        </div>
+                        <p class="pt-2 text-center font-body text-primary lg:text-lg text-center">
+                            eddaldana95@gmail.com
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-dashed border-[#cfcfcf] px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
+                        <div class="flex items-center justify-center">
+                            <i class="bx bx-map text-2xl text-grey-40"></i>
+                            <p class="pl-2 font-body uppercase text-[#645CBB] lg:text-lg">
+                                Ubicación
+                            </p>
+                        </div>
+                        <p class="pt-2 text-center font-body text-primary lg:text-lg">
+                            Ciudad de México
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="flex flex-col items-center container relative z-30 bg-[#645CBB] p-4" id="cv">
+                    <h3
+                        class="text-center font-header font-sans text-2xl uppercase leading-tight tracking-wide text-white sm:text-3xl lg:text-4xl">
+                        Puede <span class="font-bold">descargar</span> <br>
+                        mi CV aquí.
+                    </h3>
+                    <div class="mt-6 flex flex-col justify-center align-center sm:flex-row">
+
+                        <a href="https://storage.rxresu.me/cm6dymlhd03t0o9rw3s2j0ahj/resumes/software-developer.pdf">
+
+                            <button
+                                class="cursor-pointer flex justify-around bg-gray-800 px-3 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4"
+                                    stroke="currentColor" class="w-5 h-5 animate-bounce">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"></path>
+                                </svg>
+                            </button>
+
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <div class="flex justify-center items-center font-sans text-sm md:text-lg p-5 text-[#FF5DA2]" id="mark">
+
+                </div>
+
+            </footer>
+
+        </section>
+
+        <section id="projects" class="col-span-full row-span-1 bg-pink-500 p-4 hidden">
+
+            <h2>PROYECTOS</h2>
+
+        </section>
+
+
     </div>
-
-    <script src="./scripts/Accordion.js"></script>
-
+    <script src="./scripts/functions.js"></script>
+    <script src="./scripts/timeline.js"></script>
 </body>
+
+<script>
+
+    VANTA.HALO({
+        el: "#topbar",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 50.00,
+        minWidth: 50.00,
+        xOffset: 0.09,
+        yOffset: 0.10,
+        size: 1.4
+    })
+</script>
+
 
 
 </html>
